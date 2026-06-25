@@ -365,3 +365,26 @@ function updateTransmissionCards(id) {
 initGlobe();
 buildQuickNav();
 buildTransmissions();
+
+const copyBtn = document.getElementById('copy-ca');
+const contractAddress = document.getElementById('contract-address');
+
+if (copyBtn && contractAddress) {
+  copyBtn.addEventListener('click', async () => {
+    const address = contractAddress.textContent.trim();
+    try {
+      await navigator.clipboard.writeText(address);
+      copyBtn.textContent = 'Copied';
+      copyBtn.classList.add('copied');
+      setTimeout(() => {
+        copyBtn.textContent = 'Copy';
+        copyBtn.classList.remove('copied');
+      }, 2000);
+    } catch {
+      copyBtn.textContent = 'Failed';
+      setTimeout(() => {
+        copyBtn.textContent = 'Copy';
+      }, 2000);
+    }
+  });
+}
