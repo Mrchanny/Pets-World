@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>$WORLD — Anonymous Global Network</title>
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="header">
+    <div class="header__brand">
+      <img src="assets/logo.png" alt="$WORLD logo" class="header__logo">
+      <span class="header__title">$WORLD</span>
+    </div>
+    <nav class="header__nav">
+      <a href="#globe">Globe</a>
+      <a href="#transmissions">Transmissions</a>
+      <a href="#about">What is $WORLD</a>
+    </nav>
+    <div class="header__status">
+      <span class="status-dot"></span>
+      <span class="status-text">LIVE</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero__banner-wrap">
+      <img src="assets/banner.png" alt="Anonymous figure holding WORLD sign" class="hero__banner">
+      <div class="hero__banner-overlay"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__tag">// anonymous global network</p>
+      <h1 class="hero__headline">
+        <span class="glitch" data-text="WE ARE">WE ARE</span>
+        <span class="hero__headline-accent">$WORLD</span>
+      </h1>
+      <p class="hero__sub">Tracking signals across four continents. The mask sees all.</p>
+    </div>
+  </section>
+
+  <main>
+    <section id="globe" class="globe-section">
+      <div class="globe-section__header">
+        <h2>Global Surveillance</h2>
+        <p>Click a marker to view transmission logs</p>
+      </div>
+      <div class="globe-layout">
+        <div class="globe-container">
+          <canvas id="globe-canvas"></canvas>
+          <div class="globe-hud">
+            <span id="hud-coords">LAT — · LNG —</span>
+            <span id="hud-location">SELECT A NODE</span>
+          </div>
+        </div>
+        <aside class="location-panel" id="location-panel">
+          <div class="location-panel__empty">
+            <div class="location-panel__icon">◎</div>
+            <p>Awaiting signal lock…</p>
+            <p class="location-panel__hint">Select a glowing node on the globe</p>
+          </div>
+        </aside>
+      </div>
+      <ul class="location-quick-nav" id="location-nav"></ul>
+    </section>
+
+    <section id="transmissions" class="transmissions">
+      <div class="section-header">
+        <h2>Transmission Log</h2>
+        <span class="section-header__meta">5 entries · encrypted feed</span>
+      </div>
+      <div class="transmission-grid" id="transmission-grid"></div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="about__inner">
+        <div class="about__visual">
+          <img src="assets/logo.png" alt="Globe with anonymous mask">
+        </div>
+        <div class="about__text">
+          <h2>What is $WORLD?</h2>
+          <p>
+            $WORLD is a decentralized movement operating in the shadows — 
+            anonymous operatives documenting the pulse of the planet from 
+            Cairo to Hong Kong, Istanbul to Shanghai.
+          </p>
+          <p>
+            Each transmission is a breadcrumb. Each location, a node in the network. 
+            We don't ask who you are. We ask: are you watching?
+          </p>
+          <div class="about__stats">
+            <div class="stat">
+              <span class="stat__value">4</span>
+              <span class="stat__label">Active Nodes</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value">133</span>
+              <span class="stat__label">Total Views</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value">∞</span>
+              <span class="stat__label">Reach</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>$WORLD · Anonymous Global Network · All transmissions encrypted</p>
+    <div class="footer__links">
+      <a href="https://www.youtube.com/@WorldOnboarding" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <span class="footer__divider">·</span>
+      <a href="https://x.com/worldonboarding" target="_blank" rel="noopener noreferrer">X / @worldonboarding</a>
+    </div>
+    <p class="footer__mono">// we are legion · we do not forgive · we do not forget</p>
+  </footer>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
